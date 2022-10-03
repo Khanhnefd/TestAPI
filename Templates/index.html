@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result ex1</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='../static/style.css') }}">
+</head>
+<body>
+    Enter sentence here: <br>
+    <form action="/api/v1/get_user" method="post">
+        <input type="text" name="name" id="" required>
+        <input type="submit" value="OK">
+    </form>
+    <table>
+        {% if user!='' %}
+            <h2>Result</h2>
+            {{user.last_name}} <br>
+            {{user.roles}}
+        {% endif %}
+    </table>
+</body>
+</html>
